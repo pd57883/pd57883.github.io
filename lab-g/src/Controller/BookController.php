@@ -18,10 +18,10 @@ class BookController
         return $html;
     }
 
-    public function createAction(?array $requestPost, Templating $templating, Router $router): ?string
+    public function createAction(?array $requestBook, Templating $templating, Router $router): ?string
     {
-        if ($requestPost) {
-            $book = Book::fromArray($requestPost);
+        if ($requestBook) {
+            $book = Book::fromArray($requestBook);
             // @todo missing validation
             $book->save();
 
@@ -39,15 +39,15 @@ class BookController
         return $html;
     }
 
-    public function editAction(int $bookId, ?array $requestPost, Templating $templating, Router $router): ?string
+    public function editAction(int $bookId, ?array $requestBook, Templating $templating, Router $router): ?string
     {
         $book = Book::find($bookId);
         if (! $book) {
             throw new NotFoundException("Missing book with id $bookId");
         }
 
-        if ($requestPost) {
-            $book->fill($requestPost);
+        if ($requestBook) {
+            $book->fill($requestBook);
             // @todo missing validation
             $book->save();
 
