@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ book.title }} ({{ book.id }}){% endblock %}
+{% block body_class %}show{% endblock %}
+
+{% block main %}
+    <h1>{{ book.title }}</h1>
+
+    <article class="book-details">
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+        <p><strong>Publication Year:</strong> {{ book.publication_year }}</p>
+    </article>
+
+    <ul class="action-list">
+        <li><a href="{{ url_for('book_index') }}">Back to list</a></li>
+        <li><a href="{{ url_for('book_edit', id=book.id) }}">Edit</a></li>
+    </ul>
+{% endblock %}
