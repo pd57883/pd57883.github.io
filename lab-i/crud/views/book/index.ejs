@@ -1,0 +1,20 @@
+<%- include('../header', {title: 'Book List', bodyClass: 'index'}) %>
+
+<h1>Books List</h1>
+
+<a href="/book/create">Create new</a>
+
+<ul class="index-list">
+    <% books.forEach(function(book) { %>
+        <li>
+            <h3><%= book.title %></h3>
+            <small>by <%= book.author %></small>
+            <ul class="action-list">
+                <li><a href="/book/<%= book.id %>">Details</a></li>
+                <li><a href="/book/<%= book.id %>/edit">Edit</a></li>
+            </ul>
+        </li>
+    <% }); %>
+</ul>
+
+<%- include('../footer') %>

@@ -1,0 +1,16 @@
+<%- include('../header', {title: `${book.title} (${book.id})`, bodyClass: 'show'}) %>
+
+<h1><%= book.title %></h1>
+
+<article class="book-details">
+    <p><strong>Author:</strong> <%= book.author %></p>
+    <p><strong>ISBN:</strong> <%= book.isbn %></p>
+    <p><strong>Publication Year:</strong> <%= book.publication_year %></p>
+</article>
+
+<ul class="action-list">
+    <li><a href="/book">Back to list</a></li>
+    <li><a href="/book/<%= book.id %>/edit">Edit</a></li>
+</ul>
+
+<%- include('../footer') %>

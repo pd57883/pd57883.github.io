@@ -1,0 +1,15 @@
+node_modules/
+*.db
+*.sqlite
+*.sqlite-journal
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+*.log
+.env
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

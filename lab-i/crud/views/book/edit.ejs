@@ -1,0 +1,20 @@
+<%- include('../header', {title: `Edit Book ${book.title} (${book.id})`, bodyClass: 'edit'}) %>
+
+<h1>Edit Book <%= book.title %> (<%= book.id %>)</h1>
+
+<form action="/book/<%= book.id %>/edit" method="post" class="edit-form">
+    <%- include('_form') %>
+</form>
+
+<ul class="action-list">
+    <li>
+        <a href="/book">Back to list</a>
+    </li>
+    <li>
+        <form action="/book/<%= book.id %>/delete" method="post" style="display:inline;">
+            <input type="submit" value="Delete" onclick="return confirm('Are you sure?')">
+        </form>
+    </li>
+</ul>
+
+<%- include('../footer') %>

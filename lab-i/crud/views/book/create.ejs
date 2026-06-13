@@ -1,0 +1,10 @@
+<%- include('../header', {title: 'Create Book', bodyClass: 'edit'}) %>
+
+<h1>Create Book</h1>
+<form action="/book/create" method="post" class="edit-form">
+    <%- include('_form') %>
+</form>
+
+<a href="/book">Back to list</a>
+
+<%- include('../footer') %>
